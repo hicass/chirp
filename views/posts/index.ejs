@@ -2,4 +2,13 @@
 
 <h1>Chirps!</h1>
 
+<% posts.forEach(function(p) { %>
+    <div>
+        <table>
+            <td><img alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'><%= p.userName %></td>
+            <td><%= p.content %></td>
+        </table>
+    </div>
+<% }); %>
+
 <%- include('../partials/footer') %>
