@@ -7,6 +7,13 @@
         <table>
             <td><img alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'><%= p.userName %></td>
             <td><%= p.content %></td>
+            <td>
+                <% if (user?._id.equals(p.user)) { %>
+                    <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
+                        <button type='submit'>X</button>
+                    </form>
+                <% } %>
+            </td>
         </table>
     </div>
 <% }); %>

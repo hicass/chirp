@@ -1,12 +1,15 @@
 const express = require('express');
 const router = express.Router();
 const postsCtrl = require('../controllers/posts');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // GET /posts
-router.get('/', postsCtrl.index);
+router.get('/', ensureLoggedIn, postsCtrl.index);
 // GET /posts/new
-router.get('/new', postsCtrl.new);
+router.get('/new', ensureLoggedIn, postsCtrl.new);
 // POST /posts
-router.post('/', postsCtrl.create);
+router.post('/', ensureLoggedIn, postsCtrl.create);
+// DELETE /posts/:id
+router.delete('/:id', ensureLoggedIn, postsCtrl.delete);
 
 module.exports = router;
