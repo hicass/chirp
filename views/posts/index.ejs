@@ -5,17 +5,47 @@
 <% posts.forEach(function(p) { %>
     <div>
         <table>
-            <td><img alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'><%= p.userName %></td>
+            <td><img alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'></td>
+            <td><%= p.userName %></td>
             <td><%= p.content %></td>
             <td>
                 <% if (user?._id.equals(p.user)) { %>
-                    <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
-                        <button type='submit'>X</button>
-                    </form>
+                    <button id='dropdownbtn'>
+                        <span id='openMenu' class="material-symbols-outlined">more_vert</span>
+                        <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
+                    </button>
+                </td>
+                <td>
+                    <div id='dropdown'>
+                        <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
+                            <button type='submit'><span class="material-symbols-outlined">
+                                delete
+                                </span></button>
+                        </form>
+                        <form action='/posts/<%= p._id %>' method='POST'>
+                            <button type='submit'><span class="material-symbols-outlined">
+                                edit
+                                </span></button>
+                        </form>
+                    </div>
+                </td>
                 <% } %>
-            </td>
         </table>
     </div>
 <% }); %>
+
+<script>
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'dropdownbtn' || e.target.id === 'openMenu' || e.target.id === 'closeMenu') {
+            console.log(e.target);
+            document.getElementById('dropdown').style.visibility='visible';
+        }
+        console.log(e.target);
+    })
+    // function showAndHide() {
+    //     document.getElementById('dropdown').style.backgroundColor='red';
+    //     console.log('red please');
+    // }
+</script>
 
 <%- include('../partials/footer') %>

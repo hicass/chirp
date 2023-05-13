@@ -30,8 +30,9 @@ async function create(req, res) {
 }
 
 async function deletePost(req, res) {
+    console.log('post id:', req.params.id)
     const posts = await Post.findOneAndDelete({
-        '._id': req.params._id,
+        '_id': req.params.id,
         'user': req.user.id
     });
     if (!posts) return res.redirect('/posts');
