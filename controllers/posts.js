@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newPost,
     create,
-    delete: deletePost
+    delete: deletePost,
+    update
 }
 
 async function index(req, res) {
@@ -39,3 +40,13 @@ async function deletePost(req, res) {
     res.redirect('/posts');
 }
 
+async function update(req, res) {
+    try{
+    const post = await Post.findById(req.params.id);
+    await Object.assign(post, req.body);
+    await post.save();
+    } catch (err) {
+        console.log(err);
+    }
+    res.redirect('/posts');
+}
