@@ -29,4 +29,25 @@
     <% } %>
 </div>
 
+<% if (user) { %>
+<div>
+    <form method='POST' action='/posts/<%= post._id %>/comments'>
+        <textarea name='content'></textarea>
+        <button type='submit'>+</button>
+    </form>
+</div>
+<% } %>
+
+<% if (post.comments.length) { %>
+    <% post.comments.forEach(function(c) { %>
+        <div>
+            <table>
+                <td><img src='<%= c.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
+                <td><%= c.userName %></td>
+                <td><%= c.content %></td>
+            </table>
+        </div>
+    <% }) %>
+<% } %>
+
 <%- include('../partials/footer') %>
