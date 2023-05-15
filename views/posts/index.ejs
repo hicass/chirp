@@ -3,32 +3,30 @@
 <h1>Chirps!</h1>
 
 <% posts.forEach(function(p) { %>
-    <div>
-        <table>
-            <td><img alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'></td>
-            <td><%= p.userName %></td>
+    <div class='user-post'>
+        <table class='user-post-table'>
+            <td class='user-avatar-td'><img class='user-avatar' alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'></td>
+            <td class='username'><%= p.userName %></td>
             <td><%= p.content %></td>
-            <td>
+            <td class='drop-down-btn'>
                 <% if (user?._id.equals(p.user)) { %>
-                    <button id='dropdownbtn'>
-                        <span id='openMenu' class="material-symbols-outlined">more_vert</span>
-                        <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
-                    </button>
-                </td>
-                <td>
                     <div id='dropdown'>
                         <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
                             <button type='submit'><span class="material-symbols-outlined">
                                 delete
-                                </span></button>
+                            </span></button>
                         </form>
                         <form action='/posts/<%= p._id %>?_method=PUT' method='POST'>
                             <input id='edit-input' type='text' name='content' value='<%= p.content %>'>
                             <button id='edit-btn' type='submit'><span class="material-symbols-outlined">
                                 edit
-                                </span></button>
+                            </span></button>
                         </form>
                     </div>
+                    <button id='dropdownbtn'>
+                        <span id='openMenu' class="material-symbols-outlined">more_vert</span>
+                        <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
+                    </button>
                 </td>
                 <% } %>
         </table>
