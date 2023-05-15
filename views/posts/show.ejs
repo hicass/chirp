@@ -45,9 +45,30 @@
                 <td><img src='<%= c.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
                 <td><%= c.userName %></td>
                 <td><%= c.content %></td>
+                <% if (user?._id.equals(c.user)) { %>
+                    <td>
+                        <form action='/comments/<%= c._id %>?_method=DELETE' method='POST'>
+                            <button type='submit'><span class="material-symbols-outlined">
+                                delete
+                            </span></button>
+                        </form>
+                    </td>
+                <% } %>
             </table>
         </div>
     <% }) %>
 <% } %>
+
+<script>
+    document.addEventListener('click', function(e) {
+        if (e.target.id === 'dropdownbtn' || e.target.id === 'openMenu' || e.target.id === 'closeMenu') {
+            console.log(e.target);
+            document.getElementById('dropdown').style.visibility='visible';
+        } if (e.target.id === 'edit-btn') {
+
+        }
+        console.log(e.target);
+    })
+</script>
 
 <%- include('../partials/footer') %>

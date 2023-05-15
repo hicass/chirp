@@ -39,17 +39,17 @@ async function create(req, res) {
 
 async function deletePost(req, res) {
     console.log('post id:', req.params.id)
-    const posts = await Post.findOneAndDelete({
+    const post = await Post.findOneAndDelete({
         '_id': req.params.id,
         'user': req.user.id
     });
-    if (!posts) return res.redirect('/posts');
+    if (!post) return res.redirect('/posts');
     res.redirect('/posts');
 }
 
 async function update(req, res) {
-    try{
     const post = await Post.findById(req.params.id);
+    try {
     await Object.assign(post, req.body);
     await post.save();
     } catch (err) {
