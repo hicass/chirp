@@ -6,5 +6,7 @@ const commentsCtrl = require('../controllers/comments');
 router.post('/posts/:id/comments', commentsCtrl.create);
 // DELETE /comments/:id
 router.delete('/comments/:id', commentsCtrl.delete);
+// PUT /comments/:id
+router.put('/comments/:id', commentsCtrl.update)
 
 module.exports = router;

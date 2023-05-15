@@ -52,6 +52,12 @@
                                 delete
                             </span></button>
                         </form>
+                        <form action='/comments/<%= c._id %>?_method=PUT' method='POST'>
+                            <textarea name='content' value='<%= c.content %>'></textarea>
+                            <button type='submit'><span class="material-symbols-outlined">
+                                edit
+                            </span></button>
+                        </form>
                     </td>
                 <% } %>
             </table>

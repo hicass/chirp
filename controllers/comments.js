@@ -2,7 +2,8 @@ const Post = require('../models/posts');
 
 module.exports = {
     create,
-    delete: deleteComment
+    delete: deleteComment,
+    update
 }
 
 async function create(req, res) {
@@ -27,5 +28,20 @@ async function deleteComment(req, res) {
     if(!post) return res.redirect('../auth/google');
     post.comments.remove(req.params.id);
     await post.save();
+    res.redirect(`/posts/${post._id}`);
+}
+
+async function update(req, res) {
+    const post = await Post.findOne({
+        'comments._id': req.params.id, 
+        'comments.user': req.user.id
+    });
+    const comment = await post.comments.find(p => p.id === req.params.id);
+    try {
+        await Object.assign(comment, req.body);
+        await post.save();
+    } catch (err) {
+        console.log(err);
+    }
     res.redirect(`/posts/${post._id}`)
 }
