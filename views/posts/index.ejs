@@ -5,7 +5,7 @@
 <% posts.forEach(function(p) { %>
     <div class='user-post'>
         <table class='user-post-table'>
-            <td class='user-avatar-td'><img class='user-avatar' alt='avatar' src='<%= p.userAvatar %>' referrerpolicy='no-referrer'></td>
+            <td class='user-avatar-td'><img class='user-avatar' src='<%= p.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
             <td class='username'><%= p.userName %></td>
             <td><%= p.content %></td>
             <td class='drop-down-btn'>
@@ -29,6 +29,7 @@
                     </button>
                 </td>
                 <% } %>
+                <td><a href='/posts/<%= p._id %>'>details...</a></td>
         </table>
     </div>
 <% }); %>

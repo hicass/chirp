@@ -9,7 +9,7 @@ a {
 
 .user-post {
   margin: 2vmin auto;
-  border: .7vmin solid black;
+  border: 1.5px solid black;
   border-radius: 5px;
   width: 90%
 }
@@ -52,6 +52,7 @@ a {
 #dropdownbtn {
   background: 0;
   border: 0;
+  padding: 0;
 }
 
 #dropdown {

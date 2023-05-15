@@ -2,6 +2,7 @@ const Post = require('../models/posts');
 
 module.exports = {
     index,
+    show,
     new: newPost,
     create,
     delete: deletePost,
@@ -10,7 +11,13 @@ module.exports = {
 
 async function index(req, res) {
     const posts = await Post.find({});
-    res.render('posts/index', { title: 'All posts', posts });
+    res.render('posts/index', { title: 'All Posts', posts });
+}
+
+async function show(req, res) {
+    const post = await Post.findById(req.params.id);
+    console.log(post);
+    res.render('posts/show', {title: 'Users Post', post});
 }
 
 function newPost(req, res) {

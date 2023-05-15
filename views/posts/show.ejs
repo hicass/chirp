@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<div>
+    <img src='<%= post.userAvatar %>' alt='avatar'>
+    <h2><%= post.userName %> %></h2>
+</div>
+
+<div>
+    <p><%= post.content %></p>
+    <% if (user?._id.equals(post.user)) { %>
+        <div id='dropdown'>
+            <form action='/posts/<%= post._id %>?_method=DELETE' method='POST'>
+                <button type='submit'><span class="material-symbols-outlined">
+                    delete
+                </span></button>
+            </form>
+            <form action='/posts/<%= post._id %>?_method=PUT' method='POST'>
+                <input id='edit-input' type='text' name='content' value='<%= post.content %>'>
+                <button id='edit-btn' type='submit'><span class="material-symbols-outlined">
+                    edit
+                </span></button>
+            </form>
+        </div>
+        <button id='dropdownbtn'>
+            <span id='openMenu' class="material-symbols-outlined">more_vert</span>
+            <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
+        </button>
+    </td>
+    <% } %>
+</div>
+
+<%- include('../partials/footer') %>
