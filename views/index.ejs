@@ -3,12 +3,30 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/home.css' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@1,300&family=Foldit:wght@700&family=Gruppo&family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
   </head>
   <body>
     <h2>Welcome to...</h2>
     <h1>Chirp</h1>
-    <h3>come on in</h3>
-    <a href='/auth/google' class='login'>LOG IN</a>
-    <p>make yourself @ home</p>
+    <div id='case'>
+    <div>
+      <% for (let i = 0; i < 3; i++) { %>
+      <div class='post-preview'>
+        <table class='user-post-table'>
+          <td><img class='user-avatar' src='<%= posts[i].userAvatar %>' alt='avatar'></td>
+          <td class='username'><%= posts[i].userName %></td>
+          <td><%= posts[i].content %></td>
+        </table>
+      </div>
+      <% } %>
+    </div>
+    <div id='login-case'>
+      <a href='/auth/google' class='login'>LOG IN/ SIGN UP</a>
+    </div>
+  </div>
+  <p>make yourself @ home</p>
   </body>
 </html>

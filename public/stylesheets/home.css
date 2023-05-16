@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+h2 {
+    margin: 0 auto;
+    font-size: 5vmin;
+    font-family: 'Gruppo', cursive; 
+    color: rgb(185, 185, 185);
+}
+
+h1 {
+    margin: 0 30vmin;
+    font-size: 10vmin;
+    font-family: 'Foldit', cursive;
+}
+
+.post-preview {
+    background-color: white;
+    color: black;
+    margin: 2vmin auto;
+    border-radius: 5px;
+    width: 100vmin;
+}
+
+p {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20vmin;
+    padding: 0;
+    font-size: 5vmin;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    color: rgb(57, 57, 57);
+}
+
+a {
+    font-family: 'Gruppo', cursive;
+    font-size: 5vmin;
+}
+
+a:hover {
+    cursor: pointer;
+    color: rgb(163, 163, 163);
+}
+
+#case {
+    display: flex;
+    justify-content: space-between;
+    margin: 10vmin auto;
+    width: 100%
+}
+
+#login-case {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}

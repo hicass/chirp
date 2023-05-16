@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+const Post = require('../models/posts');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Welcome / Chirp' });
+router.get('/', async function(req, res, next) {
+  const posts = await Post.find({});
+  res.render('index', { title: 'Welcome / Chirp', posts });
 });
 
 router.get('/auth/google', passport.authenticate(
