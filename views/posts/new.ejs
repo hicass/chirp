@@ -1,8 +1,14 @@
 <%- include('../partials/header') %>
 
-<form action='/posts' method='POST'>
+<form action='/posts/sentiment' method='GET'>
     <textarea name='content'></textarea>
     <button type='submit'>+</button>
 </form>
+
+<div>
+    <% if (typeof errorMessage !== 'undefined') { %>
+        <p><%= errorMessage %></p>
+    <% } %>
+</div>
 
 <%- include('../partials/footer') %>

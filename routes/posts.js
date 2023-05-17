@@ -7,6 +7,8 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', ensureLoggedIn, postsCtrl.index);
 // GET /posts/new
 router.get('/new', ensureLoggedIn, postsCtrl.new);
+// GET /posts/sentiment
+router.get('/sentiment', postsCtrl.create);
 // GET /posts/:id
 router.get('/:id', postsCtrl.show);
 // POST /posts
