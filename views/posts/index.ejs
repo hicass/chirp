@@ -5,40 +5,44 @@
 
 <% posts.forEach(function(p) { %>
     <div class='user-post'>
-        <table class='user-post-table'>
-            <td class='user-avatar-td'><img class='user-avatar' src='<%= p.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
-            <td class='username'><%= p.userName %></td>
-            <td class='user-content'><%= p.content %></td>
-            <td class='drop-down-btn'>
-                <% if (user?._id.equals(p.user)) { %>
-                    <div class='dropdown' id='dropdown-<%= p._id %>'>
-                        <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
-                            <button type='submit'>
-                                <span class="material-symbols-outlined">delete</span>
-                            </button>
-                        </form>
-                        <form id='post-form' action='/posts/<%= p._id %>?_method=PUT' method='POST'>
-                            <input id='edit-input' type='text' name='content' value='<%= p.content %>'>
-                            <button id='edit-btn' type='submit'>
-                                <span class="material-symbols-outlined">edit</span>
-                            </button>
-                        </form>
-                    </div>
-                    <button class='dropdown-btn' id='<%= p._id %>'> +
-                        <!-- <span class="material-symbols-outlined" id='dropdown-icon-<%= p._id %>'>more_vert</span> -->
+        <div class='user-avatar'>
+            <img class='user-avatar' src='<%= p.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'>
+        </div>
+        <div class='post-content'>
+            <p class='user-name'><%= p.userName %></p>
+            <p class='post-text'><%= p.content %></p>
+        </div>
+        <div class='post-details'>
+            <% if (user?._id.equals(p.user)) { %>
+                <div class='dropdown' id='dropdown-<%= p._id %>'>
+                    <form action='/posts/<%= p._id %>?_method=DELETE' method='POST'>
+                        <button type='submit'>
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </form>
+                    <form id='post-form' action='/posts/<%= p._id %>?_method=PUT' method='POST'>
+                        <input id='edit-input' type='text' name='content' value='<%= p.content %>'>
+                        <button id='edit-btn' type='submit'>
+                            <span class="material-symbols-outlined">edit</span>
+                        </button>
+                    </form>
+                </div>
+                <button class='dropdown-btn' id='<%= p._id %>'> 
+                    <span class="material-symbols-outlined" id='dropdown-icon-<%= p._id %>'>more_vert</span>
                         <!-- <span class="material-symbols-outlined" id='dropdown-icon-<%= p._id %>'>arrow_circle_right</span> -->
-                    </button>
-                </td>
-                <% } %>
-                <td><a class='details-link' href='/posts/<%= p._id %>'>details...</a></td>
-        </table>
+                </button>
+            <% } %>
+            <a class='show-link' href='/posts/<%= p._id %>'>
+                <span class="material-symbols-outlined">comment</span>
+            </a>
+        </div>
     </div>
 <% }); %>
 
 <script>
     document.addEventListener('click', function(e) {
         const targetId = e.target.id
-        if (e.target.tagName === 'BUTTON') {
+        if (e.target.tagName === 'BUTTON' && e.target.tagName === 'SPAN') {
             const dropDownId = `dropdown-${targetId}`
             const dropDownEl = document.getElementById(dropDownId);
             const dropDownVisibility = dropDownEl.style.visibility
