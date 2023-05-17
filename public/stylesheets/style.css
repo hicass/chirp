@@ -1,9 +1,14 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+  color: white;
 }
 
 a {
+  color: #6c6c6c;
+}
+
+h1 {
+  font-family: 'Libre Barcode 128 Text', cursive;
   color: #6c6c6c;
 }
 
@@ -11,7 +16,9 @@ a {
   margin: 2vmin auto;
   border: 1.5px solid black;
   border-radius: 5px;
-  width: 90%
+  width: 90%;
+  color: black;
+  background-color: white;
 }
 
 .user-post-table {
@@ -28,6 +35,13 @@ a {
 
 .username {
   width: 10%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 3vmin;
+}
+
+.user-content {
+  font-family: 'Open Sans', sans-serif;
 }
 
 .user-avatar {
@@ -35,6 +49,9 @@ a {
   border-radius: 50px;
 }
 
+.details-link {
+  font-family: 'Open Sans', sans-serif;
+}
 
 .drop-down-btn {
   vertical-align: top;
@@ -49,18 +66,15 @@ a {
   align-items: flex-end;
 }
 
-#dropdownbtn {
+.dropdown-btn{
   background: 0;
   border: 0;
   padding: 0;
+  z-index: 348;
 }
 
-#dropdown {
+.dropdown {
   visibility: hidden;
   position: absolute;
 }
 
-#closeMenu {
-  visibility: hidden;
-  position: absolute;
-}

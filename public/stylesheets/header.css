@@ -1,0 +1,12 @@
+nav {
+    font-family: 'Gruppo', cursive;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+}
+
+nav, h3 {
+    margin:0px;
+}
