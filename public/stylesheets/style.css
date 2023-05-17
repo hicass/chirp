@@ -15,10 +15,9 @@ h1 {
 }
 
 .user-post {
-  margin: 2vmin auto;
-  border-radius: 10px;
-  width: 50rem;
-  min-width: 50rem;
+  margin: .2rem auto;
+  width: 40rem;
+  min-width: 40rem;
   color: black;
   background-color: white;
   display: flex;
@@ -46,6 +45,7 @@ h1 {
   font-weight: 300;
   padding: 0 1.2rem;
   margin: 0 0 0.2rem 0;
+  font-size: 1rem;
 }
 
 .post-details {
@@ -57,17 +57,9 @@ h1 {
 }
 
 .show-link {
-  font-size: 1rem;
+  font-size: .2rem;
   padding: 0 0.5rem;
   text-decoration: none;
-}
-
-.drop-down-btn {
-  vertical-align: top;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
 }
 
 .drop-down-td  {
@@ -75,14 +67,40 @@ h1 {
   align-items: flex-end;
 }
 
-.dropdown-btn{
+.dropdown-btn {
   background: 0;
   border: 0;
-  padding: 0;
   z-index: 3;
+  padding: 0.2rem 0 1rem;
+}
+
+.edit-btn, .delete-btn {
+  padding: 0 0 1rem;
+  background: 0;
+  border: 0;
 }
 
 .dropdown {
   visibility: hidden;
   position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 0 2rem;
+}
+
+.edit-input {
+  font-weight: 300;
+  width: 31rem;
+  height: 4rem;
+  border: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.post-form {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
 }
