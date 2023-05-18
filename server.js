@@ -11,7 +11,7 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-const indexRouter = require('./routes/index');
+const landingRouter = require('./routes/landing');
 const postsRouter = require('./routes/posts');
 const commentsRouter = require('./routes/comments');
 
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/', landingRouter);
 app.use('/posts', postsRouter);
 app.use('/', commentsRouter);
 
