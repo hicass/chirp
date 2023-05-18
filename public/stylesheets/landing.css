@@ -1,3 +1,7 @@
+* {
+    font-size: 16px;
+}
+
 body {
     background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
     #0a0a0a, #222222, #0a0a0a);
