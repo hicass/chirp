@@ -1,3 +1,9 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+  }
+
 body {
     background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
     #0a0a0a, #222222, #0a0a0a);
@@ -9,23 +15,24 @@ body {
     min-height: 100%;
   }
 
-h2 {
+  
+h1 {
+    margin: 1rem 5rem;
+    font-size: 4rem;
+    font-family: 'Foldit', cursive;
+}
+    
+h3 {
     margin: 0 auto;
     font-size: 5vmin;
     font-family: 'Gruppo', cursive; 
     color: rgb(185, 185, 185);
 }
 
-h1 {
-    margin: 0 30vmin;
-    font-size: 10vmin;
-    font-family: 'Foldit', cursive;
-}
-
 #case {
     display: flex;
     justify-content: space-between;
-    margin: 10vmin auto;
+    margin: 1rem auto auto 2rem;
     width: 100%;
 }
 
@@ -70,27 +77,39 @@ h1 {
 .post-text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    padding: .5rem 1.2rem;
-    margin: 0 0 0.2rem 0;
+    padding: .7rem 1.2rem;
+    margin: 0;
     font-size: .7rem;
 }
-
-a {
-    font-family: 'Gruppo', cursive;
-    font-size: 5vmin;
-}
-
-a:hover {
-    cursor: pointer;
-    color: rgb(163, 163, 163);
-}
-
 
 #login-case {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 6rem;
+    border-radius: 6px;
+}
+
+#login-case > a {
+    color: #606060;
+    font-family: 'Gruppo', cursive;
+    font-size: 5vmin;
+    text-decoration: none;
+}
+
+#login-case > a:hover {
+    cursor: pointer;
+    color: rgb(163, 163, 163);
+}
+
+#accent-text {
+    margin: 8rem 3rem 0;
+    display: flex;
+    justify-content: flex-end;
+    font-family: 'Libre Barcode 128 Text', cursive;
+    font-size: 2rem;
+    color: #606060;
 }
 
 @keyframes gradient {
