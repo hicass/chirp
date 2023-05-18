@@ -1,7 +1,7 @@
 body {
   background: linear-gradient(75deg, #0e0e0e, #060606, 
-  #0a0a0a, #0c0c0c, #0a0a0a);
-  background-size: 500% 500%;
+  #101010, #141414, #000000);
+  background-size: 300% 300%;
   animation: gradient 30s ease infinite;
   color: white;
   margin: 0;
@@ -12,31 +12,38 @@ body {
 /* index, show, new */
 
 #main-container {
-  max-height: 35rem;
-  max-width: 30rem;
+  max-height: 61rem;
+  max-width: 40rem;
   overflow-y: auto;
-  margin: 0 0 0 15rem;
-  padding: 0 2rem;
+  margin: 0 0 0 35rem;
+  padding: 0 5rem;
 }
 /* index, show, new */
 
+::-webkit-scrollbar, ::-webkit-scrollbar-corner {
+  background-color: #0a0a0a4D;
+  backdrop-filter: blur(10px);
+}
+
 h1 {
-  font-family: 'Libre Barcode 128 Text', cursive;
+  padding: .5rem;
+  width: 40rem;
+  font-family: 'Gruppo', cursive;
   color: #bababa;
-  padding: 0.2rem 1rem;
   margin: 0;
   position: sticky;
   top: 0;
   background-color: #0a0a0a4D;
   backdrop-filter: blur(10px);
-  font-size: 2.3rem;
+  font-size: 2rem;
+  z-index: 2;
 }
 /* index, new */
 
 .user-post, .user-comment {
   margin: .2rem auto;
-  width: 30rem;
-  min-width: 30rem;
+  max-width: 40rem;
+  min-width: 40rem;
   display: flex;
   font-family: 'Open Sans', sans-serif;
   box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
@@ -61,22 +68,22 @@ h1 {
 }
 /* index, show*/
 
+/*
 .post-text {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   padding: .7rem 1.2rem;
   margin: 0;
   font-size: .7rem;
-}
+} */
 /* index, show*/
 
 .dropdown-btn {
-  color: white;
   background: 0;
-  border: 0;
-  z-index: 3;
-  padding: 0.2rem 0 1rem;
-  color: #6c6c6c;
+    border: 0;
+    z-index: 3;
+    padding: 0.2rem 0 6rem;
+    color: #606060;
 }
 /* index, show */
 

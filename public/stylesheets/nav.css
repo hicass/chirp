@@ -2,21 +2,26 @@ nav {
     font-family: 'Gruppo', cursive;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     float: left;
-    padding-left: 1rem;
+    padding-left: 15rem;
 }
 
 #nav-logo {
-    margin: 0.5rem;
-    font-size: 1.5rem;
+    margin: 2rem;
+    font-size: 4rem;
+    font-family: 'Foldit', cursive;
+}
+
+#logo-img {
+    width: 4rem;
 }
 
 .nav-link {
-    margin: 1rem 0 0 3rem;
+    margin: 1rem 0 0 4rem;
     padding: .2rem;
-    font-size: 1.2rem;
-    width: 6rem;
+    font-size: 2rem;
+    width: 10rem;
     text-align: center;
 }
 
