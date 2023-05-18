@@ -1,31 +1,58 @@
 body {
-  background-color: black;
+  background: linear-gradient(75deg, #0e0e0e, #060606, 
+  #0a0a0a, #0c0c0c, #0a0a0a);
+  background-size: 500% 500%;
+  animation: gradient 30s ease infinite;
   color: white;
   margin: 0;
+  overscroll-behavior: none;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+#post-container {
+  max-height: 35rem;
+  max-width: 30rem;
+  overflow-y: auto;
+  margin: 0 0 0 15rem;
+  padding: 0 2rem;
 }
 
 a {
   color: #6c6c6c;
+  text-decoration: none;
 }
+
 
 h1 {
   font-family: 'Libre Barcode 128 Text', cursive;
-  color: #6c6c6c;
-  padding: 0 2rem;
+  color: #b4b4b4;
+  padding: 0.2rem 2rem;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  background-color: #0a0a0a4D;
+  backdrop-filter: blur(10px);
+  font-size: 2.3rem;
 }
 
 .user-post {
   margin: .2rem auto;
-  width: 40rem;
-  min-width: 40rem;
-  color: black;
-  background-color: white;
+  min-height: 5rem;
+  width: 30rem;
+  min-width: 30rem;
   display: flex;
   font-family: 'Open Sans', sans-serif;
+  box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.user-post:hover {
+  box-shadow: 0 .2rem 1rem rgba(123, 123, 123, 0.25);
 }
 
 .user-avatar {
-  width: 3rem;
+  width: 2rem;
   padding: 0.2rem;
   border-radius: 50px;
 }
@@ -36,16 +63,16 @@ h1 {
 
 .user-name {
   font-weight: 500;
-  font-size: 1rem;
+  font-size: .8rem;
   margin: 0;
   padding: 0.3rem 1rem;
 }
 
 .post-text {
   font-weight: 300;
-  padding: 0 1.2rem;
+  padding: .5rem 1.2rem;
   margin: 0 0 0.2rem 0;
-  font-size: 1rem;
+  font-size: .7rem;
 }
 
 .post-details {
@@ -68,16 +95,19 @@ h1 {
 }
 
 .dropdown-btn {
+  color: white;
   background: 0;
   border: 0;
   z-index: 3;
   padding: 0.2rem 0 1rem;
+  color: #6c6c6c;
 }
 
 .edit-btn, .delete-btn {
   padding: 0 0 1rem;
   background: 0;
   border: 0;
+  color: #6c6c6c;
 }
 
 .dropdown {
@@ -103,4 +133,16 @@ h1 {
   position: relative;
   display: flex;
   align-items: flex-start;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

@@ -36,7 +36,7 @@ async function create(req, res) {
 
     const sentiment = await checkSentiment(requestBody.content);
     if (sentiment.includes('joy')) {
-        res.render('posts/new', { errorMessage: 'Sounds a little too chipper to be a Chirp! Try something more negative...' });
+        res.render('posts/new', { errorMessage: 'Sounds a little too chipper to be a Chirp, try something more negative...' });
     } else {
         try { 
             await Post.create(requestBody); 

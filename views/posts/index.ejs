@@ -1,8 +1,7 @@
 <%- include('../partials/header') %>
 
-
-<h1>Latest Chirps!</h1>
-
+<div id='post-container'>
+    <h1>Latest Chirps!</h1>
 <% posts.forEach(function(p) { %>
     <div class='user-post'>
         <div class='user-avatar'>
@@ -12,6 +11,7 @@
             <p class='user-name'><%= p.userName %></p>
             <p class='post-text'><%= p.content %></p>
         </div>
+        <!-- start of possible template -->
         <div class='post-details'>
             <% if (user?._id.equals(p.user)) { %>
                 <div class='dropdown' id='dropdown-<%= p._id %>'>
@@ -37,6 +37,7 @@
         </div>
     </div>
 <% }); %>
+</div>
 
 <script>
     document.addEventListener('click', function(e) {
@@ -51,11 +52,7 @@
             dropDownEl.style.visibility = isHidden ? 'visible' : 'hidden';
             dropDownIcon.innerHTML = isHidden ? 'arrow_outward' : 'more_vert';
         } 
-        // if (isHidden === true ) {
-        //     document.querySelector(`.dropdown-icon-${targetId}`).innerText='.'
-        // } if (isHidden === false ) {
-        //     document.querySelector(`.dropdown-icon-${targetId}`).innerText='.'
-        // }
+  
     });
 </script>
 

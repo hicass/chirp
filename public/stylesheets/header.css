@@ -1,11 +1,27 @@
 nav {
     font-family: 'Gruppo', cursive;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
+    float: left;
+    padding-left: 1rem;
 }
 
-nav, h3 {
-    margin: 0.2rem;
+#nav-logo {
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    margin: 1rem 0 0 3rem;
+    padding: .2rem;
+    font-size: 1.2rem;
+    width: 6rem;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: #b4b4b4;
+    background-color: rgba(123, 123, 123, 0.25);
+    border-radius: 30px;
 }

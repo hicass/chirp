@@ -1,7 +1,14 @@
 body {
-    background-color: black;
+    background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
+    #0a0a0a, #222222, #0a0a0a);
+    background-size: 500% 500%;
+    animation: gradient 30s ease infinite;
     color: white;
-}
+    margin: 0;
+    overscroll-behavior: none;
+    min-height: 100%;
+    overflow: hidden;
+  }
 
 h2 {
     margin: 0 auto;
@@ -56,4 +63,16 @@ a:hover {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }

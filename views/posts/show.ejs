@@ -1,81 +1,86 @@
 <%- include('../partials/header') %>
 
-<div>
+<div id='post-container'>
     <img src='<%= post.userAvatar %>' alt='avatar'>
     <h2><%= post.userName %> %></h2>
-</div>
-
-<div>
-    <p><%= post.content %></p>
-    <% if (user?._id.equals(post.user)) { %>
-        <div id='dropdown'>
-            <form action='/posts/<%= post._id %>?_method=DELETE' method='POST'>
-                <button type='submit'><span class="material-symbols-outlined">
-                    delete
-                </span></button>
-            </form>
-            <form action='/posts/<%= post._id %>?_method=PUT' method='POST'>
-                <input id='edit-input' type='text' name='content' value='<%= post.content %>'>
-                <button id='edit-btn' type='submit'><span class="material-symbols-outlined">
-                    edit
-                </span></button>
-            </form>
-        </div>
-        <button id='dropdownbtn'>
-            <span id='openMenu' class="material-symbols-outlined">more_vert</span>
-            <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
-        </button>
-    </td>
-    <% } %>
-</div>
-
-<% if (user) { %>
-<div>
-    <form method='POST' action='/posts/<%= post._id %>/comments'>
-        <textarea name='content'></textarea>
-        <button type='submit'>+</button>
-    </form>
-</div>
-<% } %>
-
-<% if (post.comments.length) { %>
-    <% post.comments.forEach(function(c) { %>
+    
+    <div>
+        <p><%= post.content %></p>
+        <div class='post-details'></div>
+        <% if (user?._id.equals(post.user)) { %>
+            <div class='dropdown' id='dropdown-<%= post._id %>'>
+                <form class='post-form' action='/posts/<%= post._id %>?_method=DELETE' method='POST'>
+                    <button type='submit'><span class="material-symbols-outlined">
+                        delete
+                    </span></button>
+                </form>
+                <form action='/posts/<%= post._id %>?_method=PUT' method='POST'>
+                    <input id='edit-input' type='text' name='content' value='<%= post.content %>'>
+                    <button id='edit-btn' type='submit'><span class="material-symbols-outlined">
+                        edit
+                    </span></button>
+                </form>
+            </div>
+            <button id='dropdownbtn'>
+                <span id='openMenu' class="material-symbols-outlined">more_vert</span>
+                <span id='closeMenu' class="material-symbols-outlined">arrow_back_ios_new</span>
+            </button>
+        </td>
+        <% } %>
+    </div>
+    
+    <% if (user) { %>
         <div>
-            <table>
-                <td><img src='<%= c.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
-                <td><%= c.userName %></td>
-                <td><%= c.content %></td>
-                <% if (user?._id.equals(c.user)) { %>
-                    <td>
-                        <form action='/comments/<%= c._id %>?_method=DELETE' method='POST'>
-                            <button type='submit'><span class="material-symbols-outlined">
-                                delete
-                            </span></button>
-                        </form>
-                        <form action='/comments/<%= c._id %>?_method=PUT' method='POST'>
-                            <textarea name='content' value='<%= c.content %>'></textarea>
-                            <button type='submit'><span class="material-symbols-outlined">
-                                edit
-                            </span></button>
-                        </form>
-                    </td>
-                <% } %>
-            </table>
+            <form method='POST' action='/posts/<%= post._id %>/comments'>
+                <textarea name='content'></textarea>
+                <button type='submit'>+</button>
+            </form>
         </div>
-    <% }) %>
-<% } %>
+        <% } %>
+        
+        <% if (post.comments.length) { %>
+            <% post.comments.forEach(function(c) { %>
+                <div>
+                    <table>
+                        <td><img src='<%= c.userAvatar %>' alt='avatar' referrerpolicy='no-referrer'></td>
+                        <td><%= c.userName %></td>
+                        <td><%= c.content %></td>
+                        <% if (user?._id.equals(c.user)) { %>
+                            <td>
+                                <form action='/comments/<%= c._id %>?_method=DELETE' method='POST'>
+                                    <button type='submit'><span class="material-symbols-outlined">
+                                        delete
+                                    </span></button>
+                                </form>
+                                <form action='/comments/<%= c._id %>?_method=PUT' method='POST'>
+                                    <textarea name='content' value='<%= c.content %>'></textarea>
+                                    <button type='submit'><span class="material-symbols-outlined">
+                                        edit
+                                    </span></button>
+                                </form>
+                            </td>
+                            <% } %>
+                        </table>
+                    </div>
+                    <% }) %>
+                    <% } %>
+</div>
 
 <script>
     document.addEventListener('click', function(e) {
-        if (e.target.id === 'dropdownbtn' || e.target.id === 'openMenu' || e.target.id === 'closeMenu') {
-            console.log(e.target);
-            document.getElementById('dropdown').style.visibility='visible';
-            document.getElementById('')
-        } if (e.target.id === 'edit-btn') {
-
-        }
-        console.log(e.target);
-    })
+        console.log(e.target.tagName);
+        const targetId = e.target.id
+        const dropDownId = `dropdown-${targetId}`
+        const dropDownEl = document.getElementById(dropDownId);
+        const dropDownIcon = document.querySelector(`.dropdown-icon-${targetId}`)
+        const dropDownVisibility = dropDownEl.style.visibility
+        const isHidden = dropDownVisibility === 'hidden' || dropDownVisibility === '';
+        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SPAN') {
+            dropDownEl.style.visibility = isHidden ? 'visible' : 'hidden';
+            dropDownIcon.innerHTML = isHidden ? 'arrow_outward' : 'more_vert';
+        } 
+                  
+    });
 </script>
 
 <%- include('../partials/footer') %>
