@@ -1,5 +1,7 @@
 <%- include('../partials/header') %>
 
+<div id='main-container'>
+    <h1>add chirp!</h1>
 <form action='/posts/sentiment' method='GET'>
     <textarea name='content'></textarea>
     <button type='submit'>+</button>
@@ -9,6 +11,7 @@
     <% if (typeof errorMessage !== 'undefined') { %>
         <p><%= errorMessage %></p>
     <% } %>
+</div>
 </div>
 
 <%- include('../partials/footer') %>

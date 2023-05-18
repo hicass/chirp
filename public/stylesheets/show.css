@@ -1,0 +1,27 @@
+#post-user-avatar {
+    width: 3rem;
+    padding: 0.2rem;
+    border-radius: 50px;
+}
+
+.user-post {
+    max-height: 1rem;
+}
+
+.post-user-name {
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.comment-user-name {
+    font-weight: 300;
+    font-size: .6rem;
+}
+
+.post-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 15%;
+}

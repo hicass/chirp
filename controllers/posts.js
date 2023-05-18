@@ -13,17 +13,16 @@ module.exports = {
 
 async function index(req, res) {
     const posts = await Post.find({});
-    res.render('posts/index', { title: 'All Posts', posts });
+    res.render('posts/index', { title: 'All Posts', stylesheet: '/stylesheets/index.css',posts });
 }
 
 async function show(req, res) {
     const post = await Post.findById(req.params.id);
-    console.log(post);
-    res.render('posts/show', {title: 'Users Post', post});
+    res.render('posts/show', { title: 'Users Post', stylesheet: '/stylesheets/show.css', post });
 }
 
 function newPost(req, res) {
-    res.render('posts/new', { title: 'New Post'});
+    res.render('posts/new', { title: 'New Post', stylesheet: '/stylesheets/new.css' });
 }
 
 async function create(req, res) {
@@ -36,7 +35,9 @@ async function create(req, res) {
 
     const sentiment = await checkSentiment(requestBody.content);
     if (sentiment.includes('joy')) {
-        res.render('posts/new', { errorMessage: 'Sounds a little too chipper to be a Chirp, try something more negative...' });
+        res.render('posts/new', 
+        { title: 'New Post', stylesheet: '/stylesheets/new.css' }, 
+        { errorMessage: 'Sounds a little too chipper to be a Chirp, try something more negative...' });
     } else {
         try { 
             await Post.create(requestBody); 

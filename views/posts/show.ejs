@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
-<div id='post-container'>
-    <img src='<%= post.userAvatar %>' alt='avatar'>
-    <h2 class='user-name'><%= post.userName %> %></h2>
+<div id='main-container'>
+    <img id='post-user-avatar' src='<%= post.userAvatar %>' alt='avatar'>
+    <h2 class='post-user-name'><%= post.userName %></h2>
     <div>
         <p class='post-text'><%= post.content %></p>
         <div class='post-details'>
@@ -41,7 +41,7 @@
                     <img class='user-comment-avatar' src='<%= c.userAvatar %>'>
                 </div>
                 <div class='comment-content'>
-                    <p class='user-name'><%= c.userName %></p>
+                    <p class='comment-user-name'><%= c.userName %></p>
                     <p class='post-text'><%= c.content %></p>
                 </div>
                 <div class='comment-details'>
@@ -81,8 +81,7 @@
         if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SPAN') {
             dropDownEl.style.visibility = isHidden ? 'visible' : 'hidden';
             dropDownIcon.innerHTML = isHidden ? 'arrow_outward' : 'more_vert';
-        } 
-                  
+        }           
     });
 </script>
 

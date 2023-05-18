@@ -25,3 +25,8 @@ nav {
     background-color: rgba(123, 123, 123, 0.25);
     border-radius: 30px;
 }
+
+a {
+    color: #606060;
+    text-decoration: none;
+  }
