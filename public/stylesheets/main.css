@@ -2,24 +2,22 @@ body {
   background: linear-gradient(75deg, #0e0e0e, #060606, 
   #101010, #141414, #000000);
   background-size: 300% 300%;
-  animation: gradient 30s ease infinite;
-  color: white;
   margin: 0;
   overscroll-behavior: none;
   overflow: hidden;
+  color: white;
+  animation: gradient 30s ease infinite;
 }
-/* index, show, new */
 
 #main-container {
   max-height: 100vmin;
   max-width: 60%;
   min-width: 40%;
-  overflow-y: auto;
   margin: 0 30%;
-  overflow-x: hidden;
   padding: 0 2%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-/* index, show, new */
 
 ::-webkit-scrollbar, ::-webkit-scrollbar-corner {
   background-color: #0a0a0a4D;
@@ -27,56 +25,50 @@ body {
 }
 
 h1 {
-  padding: .5rem;
-  width: 100%;
-  font-family: 'Gruppo', cursive;
-  color: #bababa;
-  margin: 0;
-  position: sticky;
-  top: 0;
   background-color: #0a0a0a4D;
   backdrop-filter: blur(5px);
+  width: 100%;
+  margin: 0;
+  padding: .5rem;
+  top: 0;
+  position: sticky;
+  font-family: 'Gruppo', cursive;
   font-size: 2rem;
+  color: #bababa;
   z-index: 2;
 }
-/* index, new */
 
 .user-post, .user-comment {
-  margin: .2rem auto;
   max-width: 100%;
   min-width: 100%;
+  margin: .2rem auto;
   display: flex;
   font-family: 'Open Sans', sans-serif;
   box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-/* index, show */
 
 .user-post:hover, .user-comment:hover {
   box-shadow: 0 .2rem 1rem rgba(123, 123, 123, 0.25);
 }
-/* index, show */
 
 .post-content, .comment-content {
   min-width: 80%;
 }
-/* index, show*/
 
 .user-name, .post-user-name, .comment-user-name {
-  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0.3rem 1rem;
+  font-family: 'Open Sans', sans-serif;
 }
-/* index, show*/
 
 .dropdown-btn {
   background: 0;
-    border: 0;
-    z-index: 3;
-    padding: 0.2rem 0 6rem;
-    color: #606060;
+  padding: 0.2rem 0 6rem;
+  border: 0;
+  color: #606060;
+  z-index: 3;
 }
-/* index, show */
 
 .edit-btn, .delete-btn {
   padding: 0 0 6rem;
@@ -85,27 +77,22 @@ h1 {
   color: #6c6c6c;
   z-index: 3;
 }
-/* index, show */
 
 .dropdown {
   visibility: hidden;
-  position: absolute;
+  margin-right: 1.5rem;
+  padding: 0.5rem;
   display: flex;
+  position: absolute;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0.5rem;
-  margin-right: 1.5rem;
 }
-/* index, show */
 
-
-/* index, show */
 .post-form {
-  position: relative;
   display: flex;
+  position: relative;
   align-items: flex-start;
 }
-/* index, show */
 
 @keyframes gradient {
 	0% {

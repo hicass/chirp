@@ -2,17 +2,17 @@ body {
     background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
     #0a0a0a, #222222, #0a0a0a, #000000);
     background-size: 500% 500%;
-    animation: gradient 30s ease infinite;
-    color: white;
     margin: 0;
-    overscroll-behavior: none;
     min-height: 100%;
+    overscroll-behavior: none;
+    color: white;
+    animation: gradient 30s ease infinite;
 }
 
 h1 {
     margin: 2rem 10rem;
-    font-size: 7rem;
     font-family: 'Foldit', cursive;
+    font-size: 7rem;
 }
 
 #logo-img {
@@ -20,22 +20,22 @@ h1 {
 }
 
 #case {
+    margin: 2rem 10rem;
     display: flex;
     justify-content: space-between;
-    margin: 2rem 10rem;
 }
 
 h3 {
     margin: 0 auto;
+    font-family: 'Gruppo', cursive;
     font-size: 3rem;
-    font-family: 'Gruppo', cursive; 
     color: rgb(185, 185, 185);
 }
 
 .user-post {
-    margin: .2rem auto;
     max-width: 40rem;
     min-width: 40rem;
+    margin: .2rem auto;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
@@ -57,17 +57,17 @@ h3 {
 }
 
 .user-name {
+    padding: 0.3rem 1rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 500;
     font-size: 1rem;
-    padding: 0.3rem 1rem;
-  }
+}
 
 .post-text {
+    margin: 0;
+    padding: 1rem 1rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    padding: 1rem 1rem;
-    margin: 0;
     font-size: 1rem;
 }
 
@@ -79,12 +79,11 @@ h3 {
 }
 
 #login-case > a {
-    color: #606060;
+    border-radius: 6px;
     font-family: 'Gruppo', cursive;
     font-size: 3rem;
     text-decoration: none;
-    border-radius: 6px;
-    
+    color: #606060;
 }
 
 #login-case > a:hover {
@@ -93,15 +92,14 @@ h3 {
 }
 
 #accent-text {
+    margin-top: 5rem;
+    margin-right: 10rem;
     display: flex;
     justify-content: flex-end;
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2.5rem;
     color: #1f1f1f;
-    margin-right: 10rem;
-    margin-top: 5rem;
 }
-
 
 @keyframes gradient {
 	0% {

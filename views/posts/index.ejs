@@ -40,19 +40,18 @@
 
 <script>
     document.addEventListener('click', function(e) {
-        console.log(e.target.tagName);
-        const targetId = e.target.id
-        const dropDownId = `dropdown-${targetId}`
-        const dropDownEl = document.getElementById(dropDownId);
-        const dropDownIcon = document.querySelector(`.dropdown-icon-${targetId}`)
-        const dropDownVisibility = dropDownEl.style.visibility
-        const isHidden = dropDownVisibility === 'hidden' || dropDownVisibility === '';
-        if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SPAN') {
-            dropDownEl.style.visibility = isHidden ? 'visible' : 'hidden';
-            dropDownIcon.innerHTML = isHidden ? 'arrow_outward' : 'more_vert';
-        } 
-  
-    });
+    const targetId = e.target.id
+    const dropDownId = `dropdown-${targetId}`
+    const dropDownEl = document.getElementById(dropDownId);
+    const dropDownIcon = document.querySelector(`.dropdown-icon-${targetId}`)
+    const dropDownVisibility = dropDownEl.style.visibility
+    const isHidden = dropDownVisibility === 'hidden' || dropDownVisibility === '';
+    
+    if (e.target.tagName === 'BUTTON' || e.target.tagName === 'SPAN') {
+        dropDownEl.style.visibility = isHidden ? 'visible' : 'hidden';
+        dropDownIcon.innerHTML = isHidden ? 'arrow_outward' : 'more_vert';
+    } 
+});
 </script>
 
 <%- include('../partials/footer') %>
