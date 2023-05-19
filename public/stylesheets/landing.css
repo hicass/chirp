@@ -1,6 +1,6 @@
 body {
     background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
-    #0a0a0a, #222222, #0a0a0a);
+    #0a0a0a, #222222, #0a0a0a, #000000);
     background-size: 500% 500%;
     animation: gradient 30s ease infinite;
     color: white;
@@ -8,10 +8,9 @@ body {
     overscroll-behavior: none;
     min-height: 100%;
   }
-
   
 h1 {
-    margin: 2rem 10rem;
+    margin: 5rem 10rem;
     font-size: 7rem;
     font-family: 'Foldit', cursive;
 }
@@ -19,13 +18,11 @@ h1 {
 #logo-img {
     width: 7rem;
 }
-    
 
 #case {
     display: flex;
     justify-content: space-between;
-    margin: 1rem auto auto 2rem;
-    width: 100%;
+    margin: 2rem 10rem;
 }
 
 h3 {
@@ -36,15 +33,14 @@ h3 {
 }
 
 .user-post {
-    min-height: 7rem;
     margin: .2rem auto;
-    width: 30rem;
-    min-width: 30rem;
+    max-width: 40rem;
+    min-width: 40rem;
     display: flex;
     font-family: 'Open Sans', sans-serif;
     box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  }
+}
 
 .user-post:hover{
     box-shadow: 0 .2rem 1rem rgba(123, 123, 123, 0.25);
@@ -55,25 +51,24 @@ h3 {
 }
 
 .user-avatar {
-    width: 2rem;
-    padding: 0.2rem;
+    width: 4rem;
+    padding: 0.3rem;
     border-radius: 50px;
 }
 
 .user-name {
     font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0.3rem 1rem;
     font-weight: 500;
-    font-size: .8rem;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
   }
 
 .post-text {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-    padding: .7rem 1.2rem;
+    padding: 1rem 1rem;
     margin: 0;
-    font-size: .7rem;
+    font-size: 1rem;
 }
 
 #login-case {
@@ -81,14 +76,14 @@ h3 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 6rem;
     border-radius: 6px;
+    margin-right: 10rem;
 }
 
 #login-case > a {
     color: #606060;
     font-family: 'Gruppo', cursive;
-    font-size: 2rem;
+    font-size: 3rem;
     text-decoration: none;
 }
 
@@ -98,12 +93,13 @@ h3 {
 }
 
 #accent-text {
-    margin: 8rem 3rem 0;
     display: flex;
     justify-content: flex-end;
     font-family: 'Libre Barcode 128 Text', cursive;
-    font-size: 2rem;
-    color: #606060;
+    font-size: 2.5rem;
+    color: #1f1f1f;
+    margin-right: 10rem;
+    margin-top: 5rem;
 }
 
 @keyframes gradient {
