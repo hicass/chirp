@@ -20,7 +20,7 @@
     padding: 1rem 1rem;
     margin: 0;
     font-size: 1rem;
-  }
+}
 
 .post-details {
     display: flex;
@@ -38,6 +38,7 @@
 }
 
 .material-symbols-outlined {
+    padding-top: 0.5rem;
     font-size: 1.8rem !important; 
 }
 

@@ -1,10 +1,14 @@
 <%- include('../partials/header') %>
 
 <div id='main-container'>
-    <img id='post-user-avatar' src='<%= post.userAvatar %>' alt='avatar'>
-    <h2 class='post-user-name'><%= post.userName %></h2>
-    <div>
-        <p class='post-text'><%= post.content %></p>
+    <div id='user-post'>
+        <div>
+            <img id='post-user-avatar' src='<%= post.userAvatar %>' alt='avatar'>
+        </div>
+        <div class='post-content'>
+            <p class='post-user-name'><%= post.userName %></p>
+            <p class='post-text'><%= post.content %></p>
+        </div>
         <div class='post-details'>
             <% if (user?._id.equals(post.user)) { %>
                 <div class='dropdown' id='dropdown-<%= post._id %>'>
@@ -20,17 +24,20 @@
                     </button>
                 </form>
             </div>
-            <button class='dropdown-btn'> 
-                <span class='material-symbols-outlined dropdown-icon-<%= post._id %>' id='<%= post._id %>'>more_vert</span>
-            </button>
-            <% } %>
         </div>
+        <button class='dropdown-btn'> 
+            <span class='material-symbols-outlined dropdown-icon-<%= post._id %>' id='<%= post._id %>'>more_vert</span>
+        </button>
+        <% } %>
     </div>
     <% if (user) { %>
         <div>
             <form method='POST' action='/posts/<%= post._id %>/comments'>
-                <textarea name='content'></textarea>
-                <button type='submit'>+</button>
+                <p>add comment:</p>
+                <textarea id='new-comment-form' name='content'></textarea>
+                <button id='add-post-icon' type='submit'>
+                    <span class='material-symbols-outlined'>add</span>
+                </button>
             </form>
         </div>
     <% } %>  
