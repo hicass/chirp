@@ -16,7 +16,7 @@ async function index(req, res) {
     await posts.sort(function(a, b) {
         return b.createdAt - a.createdAt;
     });
-    res.render('posts/index', { title: 'All Posts', stylesheet: '/stylesheets/index.css',posts });
+    res.render('posts/index', { title: 'All Posts', stylesheet: '/stylesheets/index.css', posts });
 }
 
 async function show(req, res) {

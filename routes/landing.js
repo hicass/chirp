@@ -33,4 +33,8 @@ router.get('/logout', function(req, res) {
   })
 })
 
+router.get('/about', function(req, res) {
+  res.render('about', { title: 'Aboout', stylesheet: '/stylesheets/about.css' });
+});
+
 module.exports = router;

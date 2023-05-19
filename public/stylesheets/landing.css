@@ -84,6 +84,7 @@ h3 {
     border-radius: 6px;
     font-family: 'Gruppo', cursive;
     font-size: 3rem;
+    text-align: right;
     text-decoration: none;
     color: #606060;
 }
@@ -94,7 +95,9 @@ h3 {
 }
 
 #accent-text {
-    margin: -5% 0 0 5%;
+    margin: 2%;
+    position: absolute;
+    bottom: 0;
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2.5rem;
     color: #1f1f1f;
@@ -109,6 +112,10 @@ h3 {
     line-height: 1.6rem;
     word-spacing: 0.5rem;
     box-shadow: 1rem 3rem 2rem rgba(73, 73, 73, 0.25);
+}
+
+#intro-text:hover {
+    box-shadow: 0 .2rem 1rem rgba(123, 123, 123, 0.25);
 }
 
 #intro-text > p {
