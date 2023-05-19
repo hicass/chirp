@@ -6,6 +6,9 @@ const Post = require('../models/posts');
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   const posts = await Post.find({});
+  await posts.sort(function(a, b) {
+    return b.createdAt - a.createdAt;
+  });
   res.render('landing', { title: 'Welcome / Chirp', posts });
 });
 

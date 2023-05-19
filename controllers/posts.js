@@ -13,6 +13,9 @@ module.exports = {
 
 async function index(req, res) {
     const posts = await Post.find({});
+    await posts.sort(function(a, b) {
+        return b.createdAt - a.createdAt;
+    });
     res.render('posts/index', { title: 'All Posts', stylesheet: '/stylesheets/index.css',posts });
 }
 
