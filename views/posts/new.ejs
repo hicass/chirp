@@ -5,12 +5,12 @@
     <% if (typeof errorMessage !== 'undefined') { %>
         <p id='error-msg'><%= errorMessage %></p>
     <% } %>
-<form id='new-post-form' action='/posts/sentiment' method='GET'>
+    <form id='new-post-form' action='/posts/create' method='GET'>
     <textarea name='content' autofocus></textarea>
     <button id='add-post-icon' type='submit'>
         <span class="material-symbols-outlined">add</span>
     </button>
-</form>
+    </form>
 </div>
 
 <%- include('../partials/footer') %>

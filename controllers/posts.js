@@ -5,7 +5,7 @@ module.exports = {
     index,
     show,
     new: newPost,
-    create,
+    create: createPostHandler,
     checkSentiment,
     delete: deletePost,
     update
@@ -28,7 +28,7 @@ function newPost(req, res) {
     res.render('posts/new', { title: 'New Post', stylesheet: '/stylesheets/new.css' });
 }
 
-async function create(req, res) {
+async function createPostHandler(req, res) {
     const requestBody = await {
         content: req.query.content,
         user: req.user._id,

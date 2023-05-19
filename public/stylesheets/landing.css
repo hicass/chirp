@@ -1,3 +1,9 @@
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
 body {
     background: linear-gradient(75deg, #0e0e0e, #1d1d1d, 
     #0a0a0a, #222222, #0a0a0a, #000000);
@@ -76,8 +82,6 @@ h3 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    border-radius: 6px;
-    margin-right: 10rem;
 }
 
 #login-case > a {
@@ -85,6 +89,8 @@ h3 {
     font-family: 'Gruppo', cursive;
     font-size: 3rem;
     text-decoration: none;
+    border-radius: 6px;
+    
 }
 
 #login-case > a:hover {
@@ -101,6 +107,7 @@ h3 {
     margin-right: 10rem;
     margin-top: 5rem;
 }
+
 
 @keyframes gradient {
 	0% {

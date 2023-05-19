@@ -6,17 +6,18 @@ body {
   color: white;
   margin: 0;
   overscroll-behavior: none;
-  min-height: 100%;
   overflow: hidden;
 }
 /* index, show, new */
 
 #main-container {
-  max-height: 61rem;
-  max-width: 40rem;
+  max-height: 100vmin;
+  max-width: 60%;
+  min-width: 40%;
   overflow-y: auto;
-  margin: 0 0 0 35rem;
-  padding: 0 5rem;
+  margin: 0 30%;
+  padding: 0 2%;
+  overflow-x: hidden;
 }
 /* index, show, new */
 
@@ -27,14 +28,14 @@ body {
 
 h1 {
   padding: .5rem;
-  width: 40rem;
+  width: 100%;
   font-family: 'Gruppo', cursive;
   color: #bababa;
   margin: 0;
   position: sticky;
   top: 0;
   background-color: #0a0a0a4D;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   font-size: 2rem;
   z-index: 2;
 }
@@ -42,8 +43,8 @@ h1 {
 
 .user-post, .user-comment {
   margin: .2rem auto;
-  max-width: 40rem;
-  min-width: 40rem;
+  max-width: 100%;
+  min-width: 100%;
   display: flex;
   font-family: 'Open Sans', sans-serif;
   box-shadow: 0 1px 2px rgba(132, 132, 132, 0.12), 0 1px 2px rgba(71, 71, 71, 0.24);
