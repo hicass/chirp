@@ -17,7 +17,7 @@ body {
   overflow-y: auto;
   margin: 0 30%;
   overflow-x: hidden;
-  padding: 2%
+  padding: 0 2%;
 }
 /* index, show, new */
 
@@ -79,10 +79,11 @@ h1 {
 /* index, show */
 
 .edit-btn, .delete-btn {
-  padding: 0 0 1rem;
+  padding: 0 0 6rem;
   background: 0;
   border: 0;
   color: #6c6c6c;
+  z-index: 3;
 }
 /* index, show */
 
@@ -92,21 +93,13 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin: 0 2rem;
+  padding: 0.5rem;
+  margin-right: 1.5rem;
 }
 /* index, show */
 
-.edit-input {
-  font-weight: 300;
-  width: 31rem;
-  height: 4rem;
-  border: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-}
-/* index, show */
 
+/* index, show */
 .post-form {
   position: relative;
   display: flex;

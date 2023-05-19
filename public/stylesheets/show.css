@@ -45,7 +45,7 @@
     width: 100%;
 }
 
-textarea {
+textarea, input {
     color: white;
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -56,10 +56,10 @@ textarea {
     box-shadow: 0.5rem 0.5rem 1rem rgba(81, 81, 81, 0.25);
 }
 
-textarea:focus {
+textarea:focus, input:focus {
     border: 0;
     outline: none !important;
-    box-shadow: 1rem 2rem 2rem rgba(114, 114, 114, 0.25);
+    box-shadow: 1rem 2rem 1rem rgba(114, 114, 114, 0.25);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     background-color: #141414;
 }
@@ -90,4 +90,29 @@ p {
 .material-symbols-outlined:hover {
     cursor: pointer;
     color: #b4b4b4;
+}
+
+.edit-input {
+    font-weight: 300;
+    width: 27rem;
+    height: 4rem;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.dropdown {
+    margin: 1rem 0 0 -34rem;
+    align-items: flex-start;
+    display: flex;
+}
+
+#comment-textarea {
+    width: 30rem;
+    height: 4rem;
+}
+
+#comment-edit-form {
+    display: flex;
 }

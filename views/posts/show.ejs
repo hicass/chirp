@@ -54,14 +54,14 @@
                 <div class='comment-details'>
                     <% if (user?._id.equals(c.user)) { %>
                         <div class='dropdown' id='dropdown-<%= c._id %>'>
-                            <form action='/comments/<%= c._id %>?_method=PUT' method='POST'>
-                                <textarea name='content' value='<%= c.content %>'></textarea>
-                                <button type='submit'>
+                            <form id='comment-edit-form' action='/comments/<%= c._id %>?_method=PUT' method='POST'>
+                                <textarea id='comment-textarea' name='content' value='<%= c.content %>'></textarea>
+                                <button class='edit-btn' type='submit'>
                                     <span class="material-symbols-outlined">edit</span>
                                 </button>
                             </form>
                             <form action='/comments/<%= c._id %>?_method=DELETE' method='POST'>
-                                <button type='submit'>
+                                <button class='delete-btn' type='submit'>
                                     <span class="material-symbols-outlined">delete</span>
                                 </button>
                             </form>
