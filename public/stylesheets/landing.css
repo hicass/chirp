@@ -12,11 +12,11 @@ body {
 h1 {
     margin: 2rem 10rem;
     font-family: 'Foldit', cursive;
-    font-size: 7rem;
+    font-size: 5rem;
 }
 
 #logo-img {
-    width: 7rem;
+    width: 5rem;
 }
 
 #case {
@@ -71,14 +71,16 @@ h3 {
     font-size: 1rem;
 }
 
-#login-case {
+#right-case {
+    margin: 0 5%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
-#login-case > a {
+#login-link {
+    padding: 5%;
     border-radius: 6px;
     font-family: 'Gruppo', cursive;
     font-size: 3rem;
@@ -86,19 +88,31 @@ h3 {
     color: #606060;
 }
 
-#login-case > a:hover {
+#login-link:hover {
     cursor: pointer;
     color: rgb(163, 163, 163);
 }
 
 #accent-text {
-    margin-top: 5rem;
-    margin-right: 10rem;
-    display: flex;
-    justify-content: flex-end;
+    margin: -5% 0 0 5%;
     font-family: 'Libre Barcode 128 Text', cursive;
     font-size: 2.5rem;
     color: #1f1f1f;
+}
+
+#intro-text {
+    padding: 5%;
+    border: 1px solid #282828;
+    font-family: 'Gruppo', cursive;
+    font-size: 1.3rem;
+    text-indent: 2rem;
+    line-height: 1.6rem;
+    word-spacing: 0.5rem;
+    box-shadow: 1rem 3rem 2rem rgba(73, 73, 73, 0.25);
+}
+
+#intro-text > p {
+    margin: 0;
 }
 
 @keyframes gradient {
