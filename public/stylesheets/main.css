@@ -11,6 +11,7 @@ body {
 
 #main-container {
   max-height: 100vmin;
+  min-height: 100vmin;
   max-width: 60%;
   min-width: 40%;
   margin: 0 30%;

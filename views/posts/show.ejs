@@ -9,8 +9,8 @@
             <p class='post-user-name'><%= post.userName %></p>
             <p class='post-text'><%= post.content %></p>
         </div>
+        <% if (user?._id.equals(post.user)) { %>
         <div class='post-details'>
-            <% if (user?._id.equals(post.user)) { %>
                 <div class='dropdown' id='dropdown-<%= post._id %>'>
                     <form class='post-form' action='/posts/<%= post._id %>?_method=PUT' method='POST'>
                         <input class='edit-input' type='text' name='content' value='<%= post.content %>'>
@@ -19,28 +19,28 @@
                         </button>
                     </form>
                     <form action='/posts/<%= post._id %>?_method=DELETE' method='POST'></form>
-                    <button class='delete-btn' type='submit'>
+                        <button class='delete-btn' type='submit'>
                         <span class="material-symbols-outlined">delete</span>
-                    </button>
-                </form>
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
         <button class='dropdown-btn'> 
             <span class='material-symbols-outlined dropdown-icon-<%= post._id %>' id='<%= post._id %>'>more_vert</span>
         </button>
         <% } %>
     </div>
-    <% if (user) { %>
-        <div>
-            <form method='POST' action='/posts/<%= post._id %>/comments'>
+        <% if (user) { %>
+            <div id='add-comment-field'>
                 <p>add comment:</p>
-                <textarea id='new-comment-form' name='content'></textarea>
-                <button id='add-post-icon' type='submit'>
-                    <span class='material-symbols-outlined'>add</span>
-                </button>
-            </form>
-        </div>
-    <% } %>  
+                <form id='comment-form' method='POST' action='/posts/<%= post._id %>/comments'>
+                    <textarea id='new-comment-form' name='content'></textarea>
+                    <button id='add-post-icon' type='submit'>
+                        <span class='material-symbols-outlined'>add</span>
+                    </button>
+                </form>
+            </div>
+        <% } %>  
     <% if (post.comments.length) { %>
         <% post.comments.forEach(function(c) { %>
             <div class='user-comment'>
@@ -54,6 +54,7 @@
                 <div class='comment-details'>
                     <% if (user?._id.equals(c.user)) { %>
                         <div class='dropdown' id='dropdown-<%= c._id %>'>
+                            <div class='comment-edit-container'>
                             <form id='comment-edit-form' action='/comments/<%= c._id %>?_method=PUT' method='POST'>
                                 <textarea id='comment-textarea' name='content' value='<%= c.content %>'></textarea>
                                 <button class='edit-btn' type='submit'>
@@ -66,11 +67,12 @@
                                 </button>
                             </form>
                         </div>
-                        <button class='dropdown-btn'> 
-                            <span class='material-symbols-outlined dropdown-icon-<%= c._id %>' id='<%= c._id %>'>more_vert</span>
-                        </button>
+                    </div>
                     <% } %>
                 </div>
+                <button class='dropdown-btn'> 
+                    <span class='material-symbols-outlined dropdown-icon-<%= c._id %>' id='<%= c._id %>'>more_vert</span>
+                </button>
             </div>
         <% }) %>
     <% } %>
