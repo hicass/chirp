@@ -1,9 +1,9 @@
 # Chirp
 
->Chirp is the ultimate platform for letting off steam and getting your frustrations out. Tired of the filtered, picture-perfect world of social media? Look no further, because Chirp is here to provide a safe space for people to vent, complain, and be vulnerable without judgment. Life isn't always rainbows and sunshine, we believe that it's essential to acknowledge and express our frustrations, disappointments, and grievances. This platform is designed exclusively for that purpose - a place where you can let your guard down and be your authentic, unfiltered self.
+Chirp is the ultimate platform for letting off steam and getting your frustrations out. Tired of the filtered, picture-perfect world of social media? Look no further, because Chirp is here to provide a safe space for people to vent, complain, and be vulnerable without judgment. Life isn't always rainbows and sunshine, we believe that it's essential to acknowledge and express our frustrations, disappointments, and grievances. This platform is designed exclusively for that purpose - a place where you can let your guard down and be your authentic, unfiltered self.
 
 ### Get Started!
->Link:[Source](https://chirpcw.herokuapp.com/)
+>Link: [Chirp Website](https://chirpcw.herokuapp.com/)
 
 ### Preview
 
@@ -17,8 +17,8 @@
 ![Single Post Page](./readme-assets/show.png)
 
 #### View of adding a post:
-![Add Post Page](./readme-assets/new)
->To ensure the integrity of the platform, Chirp utilizes the [Twinword Emotion Analysis API](https://www.twinword.com/api/emotion-analysis.php) to filter out happy posts and encourages users to delve deeper into their frustrations.
+![Add Post Page](./readme-assets/new.png)
+To ensure the integrity of the platform, Chirp utilizes the [Twinword Emotion Analysis API](https://www.twinword.com/api/emotion-analysis.php) to filter out happy posts and encourages users to delve deeper into their frustrations.
 
 By excluding happy posts, Chirp can create a space that focuses on the raw and often unspoken aspects of human experiences. This approach encourages users to be introspective, acknowledge their frustrations, and find solace in shared struggles.
 
