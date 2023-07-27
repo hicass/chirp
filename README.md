@@ -24,11 +24,15 @@ By excluding happy posts, Chirp can create a space that focuses on the raw and o
 
 ### Technologies Used:
 - JavaScript
+- EJS
 - CSS
-- Mongo DB
+- MongoDB
 - Express
 - Node.js
 - [Twinword Emotion Analysis API](https://www.twinword.com/api/emotion-analysis.php)
+
+### Architecture Diagram:
+![Architecture Diagram](./readme-assets/architecture-diagram.png)
 
 ### Next Steps:
 - Fix post/comment edit pop-up to appear in a more elegant way.
